@@ -47,6 +47,33 @@ UPDATE metric = 100.123
 WHERE user_id <= 4
 ```
 
+### Altering columns
+- Good Ref: [Column Manipulations](https://clickhouse.com/docs/sql-reference/statements/alter/column#rename-column)
+#### Add Column
+```clickhouse
+ALTER TABLE testdb.test_table
+    ADD COLUMN newColumn UInt64 FIRST;
+```
+- By Default the column gets add at the last. `FIRST` is used to add the column at First.
+
+#### Rename a column
+```clickhouse
+ALTER TABLE testdb.test_table
+    RENAME COLUMN newColumn TO new_column;
+```
+#### Modify Column
+Move the columns
+```clickhouse
+ALTER TABLE testdb.test_table
+    MODIFY COLUMN user_id UInt32 FIRST;
+```
+Type conversion
+```clickhouse
+
+```
+
+
+
 ## 5. Delete Data
 
 ```clickhouse
@@ -59,6 +86,7 @@ ALTER TABLE testdb.test_table DELETE WHERE user_id > 4
 DELETE FROM testdb.test_table WHERE user_id > 4
 ```
 
+---
 # Other points
 - ``SHOW DATABASES`` to see the Databases.
 

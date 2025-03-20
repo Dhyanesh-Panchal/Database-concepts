@@ -22,4 +22,10 @@ SELECT COUNT(visitor_id) AS val, day,time FROM visitors GROUP BY day,time_hr
   3. orderBy - Field on which 
   4. order - ASC or DESC.
 4. **Histogram**
-- 
+- A histogram(in context of a time series) is an aggregation graph which aggregates the data based on a Interval.
+- Simple Query : [Ref](./hist.sql)
+5. **Drilldown**
+- Its an Interactive chart that allows users to explore data at increasing levels of detail by clicking on specific data points.
+- Simple Demonstration: [drilldown](https://docs.anychart.com/Drilldown/Basics#step_by_step_guide)
+
+
